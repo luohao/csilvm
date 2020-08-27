@@ -354,7 +354,8 @@ func (vg *VolumeGroup) CreateLogicalVolume(name string, sizeInBytes uint64, tags
 			args = append(args, "--add-tag="+tag)
 		}
 	}
-	args = append(args, "--wipesignatures=y", "--yes")
+	args = append(args, "--wipesignatures=y")
+	args = append(args, "--yes")
 	args = append(args, fmt.Sprintf("--size=%db", sizeInBytes))
 	args = append(args, "--name="+name)
 	args = append(args, vg.name)
